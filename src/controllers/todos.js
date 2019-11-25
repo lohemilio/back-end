@@ -27,7 +27,8 @@ const createTodo = function(req, res){
   // modificar aqui
   const todo = new Todo({
     //...req.body.description
-    description: req.body.description
+    description: req.body.description,
+    createdBy: req.user._id
   })
   todo.save().then(function() {
     return res.send(todo)
